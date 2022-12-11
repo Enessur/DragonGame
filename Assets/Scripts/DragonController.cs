@@ -14,7 +14,7 @@ public class DragonController : FGroundFitter_MovementLook
     private bool MoveForward;
     private float verticleFlySpeed = 0f;
     private  FBasic_TPPCameraBehaviour tpp;
-    
+    [SerializeField] private GameObject _windPrefab;
 
     protected override void Start()
     {
@@ -36,7 +36,10 @@ public class DragonController : FGroundFitter_MovementLook
     {
         base.Update();
         doubleClickTimer -= Time.deltaTime;
-        
+        if (inAir)
+        {
+            WindEffect();
+        }
 
         if (MoveVector == Vector3.forward)
         {
@@ -108,6 +111,7 @@ public class DragonController : FGroundFitter_MovementLook
                     if (ActiveSpeed > BaseSpeed)
                     {
                         CrossfadeTo("Fly");
+                       
                     }
                     else
                     {
@@ -163,12 +167,12 @@ public class DragonController : FGroundFitter_MovementLook
             {
                 if (!Sprint)
                 {
-                    ActiveSpeed = Mathf.Lerp(ActiveSpeed, BaseSpeed * 3f, delta * AccelerationSpeed * 0.5f);
+                    ActiveSpeed = Mathf.Lerp(ActiveSpeed, BaseSpeed * 4f, delta * AccelerationSpeed * 0.5f);
                     Debug.Log("Normal fly");
                 }
                 else
                 {
-                    ActiveSpeed = Mathf.Lerp(ActiveSpeed, SprintingSpeed * 3f, delta * AccelerationSpeed * 0.35f);
+                    ActiveSpeed = Mathf.Lerp(ActiveSpeed, SprintingSpeed * 5f, delta * AccelerationSpeed * 0.35f);
                     Debug.Log("Sprint fly");
                 }
             }
@@ -237,5 +241,14 @@ public class DragonController : FGroundFitter_MovementLook
     {
         flying = true;
        CrossfadeTo("Fly");
+    }
+
+    private void WindEffect()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W)))
+        {
+            Instantiate(_windPrefab, transform.position, transform.rotation);
+           
+        }
     }
 }

@@ -35,12 +35,12 @@ AnimatorController:
   m_Name: PolarDragon Controller
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Animation Speed
+  - m_Name: AnimationSpeedd
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -76,7 +76,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: e8d12d2630ee7eb4dae6d56c4fecbe6a, type: 3}
   m_Tag: 
-  m_SpeedParameter: Animation Speed
+  m_SpeedParameter: AnimationSpeedd
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -466,7 +466,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 1ee60951e75b6204c994addc372f454f, type: 3}
   m_Tag: 
-  m_SpeedParameter: Animation Speed
+  m_SpeedParameter: AnimationSpeedd
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -752,10 +752,10 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 7f10852d43ede7f459338eb637d3ad61, type: 3}
   m_Tag: 
-  m_SpeedParameter: Animation Speed
+  m_SpeedParameter: AnimationSpeedd
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: Animation Speed
+  m_TimeParameter: AnimationSpeedd
 --- !u!1102 &1102906984074061158
 AnimatorState:
   serializedVersion: 6
